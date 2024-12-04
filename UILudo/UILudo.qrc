@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="UILudo">
+        <file>images/background4.jpg</file>
+    </qresource>
+</RCC>

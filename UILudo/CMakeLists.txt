@@ -30,18 +30,18 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Core Gui Widgets)
 
 set(PROJECT_SOURCES
         main.cpp
-        UILudo.cpp
-        UILudo.h
-        LudoGrid.cpp
-        LudoGrid.h
+        windows/uiLudo/UILudo.cpp
+        windows/uiLudo/UILudo.h
+        widgets/ludoGrid/LudoGrid.cpp
+        widgets/ludoGrid/LudoGrid.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(UILudo
             MANUAL_FINALIZATION
             ${PROJECT_SOURCES}
-            UILudo.qrc
-            UILudo.ui
+            resources/UILudo.qrc
+            windows/uiLudo/UILudo.ui
     )
 else()
     add_executable(UILudo

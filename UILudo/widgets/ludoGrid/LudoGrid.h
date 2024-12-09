@@ -5,7 +5,7 @@
 #include <QPushButton>
 #include <vector>
 #include <utility>
-#include "Game.h"
+#include "gameManagement/game/Game.h"
 #include <QLabel>
 #include <qgridlayout.h>
 

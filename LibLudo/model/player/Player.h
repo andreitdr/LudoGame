@@ -2,8 +2,8 @@
 
 #include <iostream>
 #include <vector>
-#include "Pawn.h"
-#include "PlayerColor.h"
+#include "../pawn/Pawn.h"
+#include "../playerColor/PlayerColor.h"
 
 class Player
 {

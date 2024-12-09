@@ -5,9 +5,9 @@
 #include <map> 
 #include <vector>
 
-#include"Dice.h"
-#include "Pawn.h"
-#include "Player.h"
+#include"../../model/dice/Dice.h"
+#include "../../model/pawn/Pawn.h"
+#include "../../model/player/Player.h"
 
 class DecisionMaker
 {

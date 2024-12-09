@@ -7,20 +7,20 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 
 add_library(LibLudo STATIC
-        DecisionMaker.cpp
-        DecisionMaker.h
-        Dice.cpp
-        Dice.h
-        Game.cpp
-        Game.h
-        Observable.cpp
-        IObserver.h
-        Observable.h
-        Pawn.cpp
-        Pawn.h
-        Player.cpp
-        Player.h
-        PlayerColor.h
+        gameManagement/decisionMaker/DecisionMaker.cpp
+        gameManagement/decisionMaker/DecisionMaker.h
+        model/dice/Dice.cpp
+        model/dice/Dice.h
+        gameManagement/game/Game.cpp
+        gameManagement/game/Game.h
+        observer/Observable.cpp
+        observer/IObserver.h
+        observer/Observable.h
+        model/pawn/Pawn.cpp
+        model/pawn/Pawn.h
+        model/player/Player.cpp
+        model/player/Player.h
+        model/playerColor/PlayerColor.h
 )
 
 target_include_directories(LibLudo PUBLIC ${CMAKE_CURRENT_SOURCE_DIR})

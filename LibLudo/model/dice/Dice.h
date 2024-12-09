@@ -1,6 +1,6 @@
 #pragma once
 #include <iostream>
-#include "IObserver.h"
+#include "../../observer/IObserver.h"
 
 class Dice: public IObserver
 {

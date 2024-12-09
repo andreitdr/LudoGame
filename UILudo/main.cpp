@@ -1,6 +1,6 @@
-﻿#include "UILudo.h"
+﻿#include "widgets/ludoGrid/LudoGrid.h"
+#include "windows/uiLudo/UILudo.h"
 #include <QtWidgets/QApplication>
-#include "LudoGrid.h"
 
 int main(int argc, char* argv[]) {
     QApplication app(argc, argv);

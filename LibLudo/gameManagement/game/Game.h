@@ -1,10 +1,10 @@
 #pragma once
 #include<vector>
-#include"Player.h"
-#include"Dice.h"
-#include"IObserver.h"
-#include "DecisionMaker.h"
-#include "Observable.h"
+#include"../../model/player/Player.h"
+#include"../../model/dice/Dice.h"
+#include"../../observer/IObserver.h"
+#include "../decisionMaker/DecisionMaker.h"
+#include "../../observer/Observable.h"
 
 class Game :  public Observable
 {

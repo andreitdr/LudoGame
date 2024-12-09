@@ -2,7 +2,7 @@
 #include <QLabel>
 #include <QPushButton>
 #include <QMessageBox>
-#include "Dice.h"
+#include "model/dice/Dice.h"
 #include "QTimer"
 
 LudoGrid::LudoGrid(QWidget* parent)

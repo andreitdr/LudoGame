@@ -3,7 +3,7 @@
 #include <iostream>
 #include <map>
 
-#include "PlayerColor.h"
+#include "../playerColor/PlayerColor.h"
 
 class Pawn
 {

@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "Dice.h"
+#include "model/dice/Dice.h"
 
 TEST(DiceTests, RollReturnsValidRange) {
     Dice dice;

@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "Player.h"
+#include "model/player/Player.h"
 
 TEST(PlayerTests, ConstructorWithColor) {
     Player player(PlayerColor::Red);

@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "Game.h"
+#include "gameManagement/game/Game.h"
 
 TEST(GameTests, InitializePlayersCreatesCorrectNumberOfPlayersAndPawns) {
     Game game;

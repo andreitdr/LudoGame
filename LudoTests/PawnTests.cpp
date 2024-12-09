@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "Pawn.h"
+#include "model/pawn/Pawn.h"
 #include <map>
 
 

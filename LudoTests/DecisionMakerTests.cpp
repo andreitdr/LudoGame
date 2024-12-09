@@ -1,5 +1,5 @@
 #include "gtest/gtest.h"
-#include "DecisionMaker.h"
+#include "gameManagement/decisionMaker/DecisionMaker.h"
 
 TEST(DecisionMakerTest, ConstructorTest) {
     DecisionMaker decisionMaker;

@@ -1,7 +1,16 @@
 ﻿#include "Game.h"
 
-Game::Game()
-{
+Game & Game::getInstance() {
+    static Game instance;
+    return instance;
+}
+
+void Game::resetGame() {
+    for (const auto player : getInstance().m_players) {
+        delete player;
+    }
+
+    getInstance().m_players.clear();
 }
 
 Game::~Game()

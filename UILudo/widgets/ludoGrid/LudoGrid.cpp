@@ -9,10 +9,9 @@ LudoGrid::LudoGrid(QWidget* parent)
     : QWidget(parent) {
     InitializeBoard(); 
     m_lastPosition = { -1,-1 };
-    game = new Game();
     InitializeObserver();
-    game->InitializePlayers();
-    auto players = game->GetPlayers();
+    Game::getInstance().InitializePlayers();
+    auto players = Game::getInstance().GetPlayers();
 
     TransformToButtonPositions(players);
     m_gridLayout = new QGridLayout();
@@ -122,7 +121,7 @@ void LudoGrid::InitializeBoard()
 void LudoGrid::InitializeObserver()
 {
     IObserver* dice = new Dice();
-    game->AddObserver(dice);
+    Game::getInstance().AddObserver(dice);
 }
 
 void LudoGrid::InitializePawnsColors()
@@ -146,8 +145,8 @@ void LudoGrid::OnCellClicked(int row, int col) {
 
     m_lastPosition = std::make_pair(row, col);
 
-    game->Move(m_lastPosition.first, m_lastPosition.second, m_lastDiceRoll);
-    game->VerifyCurrentPlayerWinner();
+    Game::getInstance().Move(m_lastPosition.first, m_lastPosition.second, m_lastDiceRoll);
+    Game::getInstance().VerifyCurrentPlayerWinner();
     UpdateButtonPositions();
     FinalMessage();
     m_waitingForMove = false;
@@ -156,13 +155,13 @@ void LudoGrid::OnCellClicked(int row, int col) {
 void LudoGrid::DiceRoll() {
     if (!m_waitingForDice) return;
 
-    m_lastDiceRoll = game->RollDice();
+    m_lastDiceRoll = Game::getInstance().RollDice();
     m_diceLabel->setText(QString("%1").arg(m_lastDiceRoll));
 
     UpdatePawnButtonStates();
 
     m_diceLabel->setStyleSheet("font-weight: bold; font-size: 20px; color: white;");
-    auto currentPlayer = game->GetCurrentPlayer();
+    auto currentPlayer = Game::getInstance().GetCurrentPlayer();
     if ((currentPlayer->HasAllPawnsInBase() && m_lastDiceRoll != 6 )||(currentPlayer->HasAllPawnsInactive()&& m_lastDiceRoll != 6)) {
         QTimer::singleShot(1000, this, &LudoGrid::ChangePlayer);
         return;
@@ -193,7 +192,7 @@ void LudoGrid::UpdateButtonPositions() {
         delete button->parentWidget();
     }
     m_pawns.clear();
-    auto players = game->GetPlayers();
+    auto players = Game::getInstance().GetPlayers();
     TransformToButtonPositions(players);
     for (const auto& position : buttonPositions) {
         int row = position.first;
@@ -228,7 +227,7 @@ void LudoGrid::UpdatePawnButtonStates()
     for (auto* button : m_pawns) {
         button->setEnabled(false);
     }
-    auto currentPlayer = game->GetPlayers()[m_currentPlayerIndex];
+    auto currentPlayer = Game::getInstance().GetPlayers()[m_currentPlayerIndex];
     PlayerColor currentColor = currentPlayer->GetColor();
     QString style;
     for (int i = 0; i < m_pawns.size(); ++i) 
@@ -284,8 +283,8 @@ void LudoGrid::ChangePlayer()
             m_nrOfsSx = 0;
         }
 
-        m_currentPlayerIndex = m_currentPlayerIndex % game->GetPlayers().size();
-        game->SetCurrentPlayer(m_currentPlayerIndex);
+        m_currentPlayerIndex = m_currentPlayerIndex % Game::getInstance().GetPlayers().size();
+        Game::getInstance().SetCurrentPlayer(m_currentPlayerIndex);
         m_waitingForDice = true;
         m_waitingForMove = false;
         m_diceLabel->setText("");
@@ -301,10 +300,8 @@ void LudoGrid::ResetGame()
     m_waitingForDice = true;
     m_waitingForMove = false;
 
- 
-    delete game; 
-    game = new Game();
-    game->InitializePlayers(); 
+    Game::resetGame();
+    Game::getInstance().InitializePlayers();
     UpdateButtonPositions(); 
     InitializePawnsColors(); 
     m_diceLabel->setText(" ");
@@ -317,7 +314,7 @@ void LudoGrid::FinalMessage()
 {
     int nrOfWinners = 0;
 
-    for (const auto& player : game->GetPlayers())
+    for (const auto& player : Game::getInstance().GetPlayers())
     {
         if (player->IsWinner())
         {
@@ -346,7 +343,7 @@ void LudoGrid::FinalMessage()
 void LudoGrid::StartGame() 
 {
     m_currentPlayerIndex = 0;
-    game->SetCurrentPlayer(m_currentPlayerIndex);
+    Game::getInstance().SetCurrentPlayer(m_currentPlayerIndex);
     m_waitingForDice = true;
     m_waitingForMove = false;
     UpdatePawnButtonStates();

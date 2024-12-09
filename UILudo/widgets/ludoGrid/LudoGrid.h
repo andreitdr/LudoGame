@@ -32,7 +32,6 @@ public:
 
 private:
     std::pair<int, int>m_lastPosition;
-    Game* game;
     QList<std::pair<int, int>> buttonPositions;
     QPushButton* m_diceButton;
     QLabel* m_diceLabel;  

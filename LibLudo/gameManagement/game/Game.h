@@ -13,9 +13,11 @@ private:
     Dice m_dice;
     Player* m_currentPlayer;
     std::vector<Player*> m_players;
+	Game() = default;
 
 public:
-	Game();
+    static Game& getInstance();
+    static void resetGame();
 	~Game();
     void VerifyCurrentPlayerWinner();
     void InitializePlayers();

@@ -2,7 +2,7 @@
 #include "gameManagement/game/Game.h"
 
 TEST(GameTests, InitializePlayersCreatesCorrectNumberOfPlayersAndPawns) {
-    Game game;
+    Game game = Game::getInstance();
     game.InitializePlayers();
 
     auto players = game.GetPlayers();
@@ -15,7 +15,7 @@ TEST(GameTests, InitializePlayersCreatesCorrectNumberOfPlayersAndPawns) {
 
 
 TEST(GameTests, RollDiceReturnsValidRange) {
-    Game game;
+    Game game = Game::getInstance();
 
     for (int i = 0; i < 100; ++i) {
         uint16_t result = game.RollDice();
@@ -25,7 +25,7 @@ TEST(GameTests, RollDiceReturnsValidRange) {
 }
 
 TEST(GameTests, SetCurrentPlayerWorksCorrectly) {
-    Game game;
+    Game game = Game::getInstance();
     game.InitializePlayers();
 
     game.SetCurrentPlayer(2); 
@@ -35,7 +35,7 @@ TEST(GameTests, SetCurrentPlayerWorksCorrectly) {
 }
 
 TEST(GameTests, GetPlayersReturnsCorrectPlayers) {
-    Game game;
+    Game game = Game::getInstance();
     game.InitializePlayers();
 
     auto players = game.GetPlayers();

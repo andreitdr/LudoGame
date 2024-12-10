@@ -1,0 +1,64 @@
+.TH "Observable" 3 "Ludo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Observable \- Represents an observable subject in the observer pattern\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <Observable\&.h>\fP
+.PP
+Inherited by \fBGame\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "void \fBAddObserver\fP (\fBIObserver\fP *observer)"
+.br
+.RI "Adds an observer to the list\&. "
+.ti -1c
+.RI "void \fBRemoveObserver\fP (\fBIObserver\fP *observer)"
+.br
+.RI "Removes an observer from the list\&. "
+.ti -1c
+.RI "void \fBNotifyOnMoveAction\fP ()"
+.br
+.RI "Notifies all observers of a move action\&. "
+.ti -1c
+.RI "void \fBNotifyOnRollAction\fP ()"
+.br
+.RI "Notifies all observers of a roll action\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents an observable subject in the observer pattern\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void Observable::AddObserver (\fBIObserver\fP * observer)"
+
+.PP
+Adds an observer to the list\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobserver\fP The observer to add\&. 
+.RE
+.PP
+
+.SS "void Observable::RemoveObserver (\fBIObserver\fP * observer)"
+
+.PP
+Removes an observer from the list\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIobserver\fP The observer to remove\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Ludo from the source code\&.

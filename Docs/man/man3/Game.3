@@ -1,0 +1,160 @@
+.TH "Game" 3 "Ludo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Game \- Manages the overall game logic and state\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <Game\&.h>\fP
+.PP
+Inherits \fBObservable\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fB~Game\fP ()"
+.br
+.RI "Destroys the \fBGame\fP object\&. "
+.ti -1c
+.RI "void \fBVerifyCurrentPlayerWinner\fP ()"
+.br
+.RI "Verifies if the current player is the winner\&. "
+.ti -1c
+.RI "void \fBInitializePlayers\fP ()"
+.br
+.RI "Initializes the players for the game\&. "
+.ti -1c
+.RI "void \fBMove\fP (int row, int column, int dice)"
+.br
+.RI "Moves a pawn based on the given row, column, and dice roll\&. "
+.ti -1c
+.RI "void \fBSetCurrentPlayer\fP (int index)"
+.br
+.RI "Sets the current player by index\&. "
+.ti -1c
+.RI "\fBPlayer\fP * \fBGetCurrentPlayer\fP ()"
+.br
+.RI "Gets the current player\&. "
+.ti -1c
+.RI "uint16_t \fBRollDice\fP ()"
+.br
+.RI "Rolls the dice\&. "
+.ti -1c
+.RI "std::vector< \fBPlayer\fP * > \fBGetPlayers\fP () const"
+.br
+.RI "Gets the list of players\&. "
+.in -1c
+
+Public Member Functions inherited from \fBObservable\fP
+.in +1c
+.ti -1c
+.RI "void \fBAddObserver\fP (\fBIObserver\fP *observer)"
+.br
+.RI "Adds an observer to the list\&. "
+.ti -1c
+.RI "void \fBRemoveObserver\fP (\fBIObserver\fP *observer)"
+.br
+.RI "Removes an observer from the list\&. "
+.ti -1c
+.RI "void \fBNotifyOnMoveAction\fP ()"
+.br
+.RI "Notifies all observers of a move action\&. "
+.ti -1c
+.RI "void \fBNotifyOnRollAction\fP ()"
+.br
+.RI "Notifies all observers of a roll action\&. "
+.in -1c
+.SS "Static Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "static \fBGame\fP & \fBgetInstance\fP ()"
+.br
+.RI "Gets the singleton instance of the \fBGame\fP\&. "
+.ti -1c
+.RI "static void \fBresetGame\fP ()"
+.br
+.RI "Resets the game to its initial state\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Manages the overall game logic and state\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "\fBPlayer\fP * Game::GetCurrentPlayer ()"
+
+.PP
+Gets the current player\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Pointer to the current player\&. 
+.RE
+.PP
+
+.SS "\fBGame\fP & Game::getInstance ()\fR [static]\fP"
+
+.PP
+Gets the singleton instance of the \fBGame\fP\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Reference to the singleton \fBGame\fP instance\&. 
+.RE
+.PP
+
+.SS "std::vector< \fBPlayer\fP * > Game::GetPlayers () const"
+
+.PP
+Gets the list of players\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A vector of pointers to the players\&. 
+.RE
+.PP
+
+.SS "void Game::Move (int row, int column, int dice)"
+
+.PP
+Moves a pawn based on the given row, column, and dice roll\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrow\fP The row of the pawn\&. 
+.br
+\fIcolumn\fP The column of the pawn\&. 
+.br
+\fIdice\fP The dice roll value\&. 
+.RE
+.PP
+
+.SS "uint16_t Game::RollDice ()"
+
+.PP
+Rolls the dice\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The value of the dice roll\&. 
+.RE
+.PP
+
+.SS "void Game::SetCurrentPlayer (int index)"
+
+.PP
+Sets the current player by index\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIindex\fP The index of the player to set as current\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Ludo from the source code\&.

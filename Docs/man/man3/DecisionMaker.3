@@ -1,0 +1,223 @@
+.TH "DecisionMaker" 3 "Ludo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+DecisionMaker \- Manages the decision-making process for the game\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <DecisionMaker\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDecisionMaker\fP ()"
+.br
+.RI "Constructs a new \fBDecisionMaker\fP object\&. "
+.ti -1c
+.RI "std::pair< int, int > \fBFindPawn\fP (int row, int column, std::vector< \fBPlayer\fP * > players)"
+.br
+.RI "Finds a pawn at the specified row and column\&. "
+.ti -1c
+.RI "void \fBMove\fP (std::pair< int, int > coordinates, int dice, std::vector< \fBPlayer\fP * > players)"
+.br
+.RI "Moves a pawn based on the given coordinates and dice roll\&. "
+.ti -1c
+.RI "void \fBMoveAction\fP (\fBPawn\fP *pawn, int dice, std::vector< \fBPlayer\fP * > players)"
+.br
+.RI "Executes the move action for a pawn\&. "
+.ti -1c
+.RI "void \fBLeaveBase\fP (\fBPawn\fP *pawn, std::vector< \fBPlayer\fP * > players)"
+.br
+.RI "Moves a pawn out of the base\&. "
+.ti -1c
+.RI "void \fBCapture\fP (\fBPawn\fP *pawn, std::vector< \fBPlayer\fP * > players)"
+.br
+.RI "Captures a pawn\&. "
+.ti -1c
+.RI "void \fBMultipleCapture\fP (\fBPawn\fP *pawn, std::vector< \fBPlayer\fP * > players)"
+.br
+.RI "Captures multiple pawns\&. "
+.ti -1c
+.RI "int \fBNrOfPawnsAt\fP (\fBPawn\fP *pawn, std::vector< \fBPlayer\fP * > players)"
+.br
+.RI "Gets the number of pawns at the specified position\&. "
+.ti -1c
+.RI "std::map< int, std::pair< int, int > > \fBGetGreenCoordinates\fP () const"
+.br
+.RI "Gets the coordinates for the green player\&. "
+.ti -1c
+.RI "std::map< int, std::pair< int, int > > \fBGetYellowCoordinates\fP () const"
+.br
+.RI "Gets the coordinates for the yellow player\&. "
+.ti -1c
+.RI "std::map< int, std::pair< int, int > > \fBGetRedCoordinates\fP () const"
+.br
+.RI "Gets the coordinates for the red player\&. "
+.ti -1c
+.RI "std::map< int, std::pair< int, int > > \fBGetBlueCoordinates\fP () const"
+.br
+.RI "Gets the coordinates for the blue player\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Manages the decision-making process for the game\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void DecisionMaker::Capture (\fBPawn\fP * pawn, std::vector< \fBPlayer\fP * > players)"
+
+.PP
+Captures a pawn\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpawn\fP The pawn to capture\&. 
+.br
+\fIplayers\fP The list of players\&. 
+.RE
+.PP
+
+.SS "std::pair< int, int > DecisionMaker::FindPawn (int row, int column, std::vector< \fBPlayer\fP * > players)"
+
+.PP
+Finds a pawn at the specified row and column\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrow\fP The row to search\&. 
+.br
+\fIcolumn\fP The column to search\&. 
+.br
+\fIplayers\fP The list of players\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+A pair of integers representing the position of the pawn\&. 
+.RE
+.PP
+
+.SS "std::map< int, std::pair< int, int > > DecisionMaker::GetBlueCoordinates () const"
+
+.PP
+Gets the coordinates for the blue player\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A map of coordinates for the blue player\&. 
+.RE
+.PP
+
+.SS "std::map< int, std::pair< int, int > > DecisionMaker::GetGreenCoordinates () const"
+
+.PP
+Gets the coordinates for the green player\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A map of coordinates for the green player\&. 
+.RE
+.PP
+
+.SS "std::map< int, std::pair< int, int > > DecisionMaker::GetRedCoordinates () const"
+
+.PP
+Gets the coordinates for the red player\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A map of coordinates for the red player\&. 
+.RE
+.PP
+
+.SS "std::map< int, std::pair< int, int > > DecisionMaker::GetYellowCoordinates () const"
+
+.PP
+Gets the coordinates for the yellow player\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A map of coordinates for the yellow player\&. 
+.RE
+.PP
+
+.SS "void DecisionMaker::LeaveBase (\fBPawn\fP * pawn, std::vector< \fBPlayer\fP * > players)"
+
+.PP
+Moves a pawn out of the base\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpawn\fP The pawn to move\&. 
+.br
+\fIplayers\fP The list of players\&. 
+.RE
+.PP
+
+.SS "void DecisionMaker::Move (std::pair< int, int > coordinates, int dice, std::vector< \fBPlayer\fP * > players)"
+
+.PP
+Moves a pawn based on the given coordinates and dice roll\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIcoordinates\fP The coordinates of the pawn\&. 
+.br
+\fIdice\fP The dice roll value\&. 
+.br
+\fIplayers\fP The list of players\&. 
+.RE
+.PP
+
+.SS "void DecisionMaker::MoveAction (\fBPawn\fP * pawn, int dice, std::vector< \fBPlayer\fP * > players)"
+
+.PP
+Executes the move action for a pawn\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpawn\fP The pawn to move\&. 
+.br
+\fIdice\fP The dice roll value\&. 
+.br
+\fIplayers\fP The list of players\&. 
+.RE
+.PP
+
+.SS "void DecisionMaker::MultipleCapture (\fBPawn\fP * pawn, std::vector< \fBPlayer\fP * > players)"
+
+.PP
+Captures multiple pawns\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpawn\fP The pawn to capture\&. 
+.br
+\fIplayers\fP The list of players\&. 
+.RE
+.PP
+
+.SS "int DecisionMaker::NrOfPawnsAt (\fBPawn\fP * pawn, std::vector< \fBPlayer\fP * > players)"
+
+.PP
+Gets the number of pawns at the specified position\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpawn\fP The pawn to check\&. 
+.br
+\fIplayers\fP The list of players\&. 
+.RE
+.PP
+\fBReturns\fP
+.RS 4
+The number of pawns at the specified position\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Ludo from the source code\&.

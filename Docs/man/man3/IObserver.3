@@ -1,0 +1,50 @@
+.TH "IObserver" 3 "Ludo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+IObserver \- Interface for observer classes that respond to game events\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <IObserver\&.h>\fP
+.PP
+Inherited by \fBDice\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "virtual void \fBOnMove\fP ()=0"
+.br
+.RI "Called when a move is made\&. "
+.ti -1c
+.RI "virtual void \fBOnRoll\fP ()=0"
+.br
+.RI "Called when the dice is rolled\&. "
+.ti -1c
+.RI "virtual \fB~IObserver\fP ()=default"
+.br
+.RI "Destroys the \fBIObserver\fP object\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Interface for observer classes that respond to game events\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "virtual void IObserver::OnMove ()\fR [pure virtual]\fP"
+
+.PP
+Called when a move is made\&. 
+.PP
+Implemented in \fBDice\fP\&.
+.SS "virtual void IObserver::OnRoll ()\fR [pure virtual]\fP"
+
+.PP
+Called when the dice is rolled\&. 
+.PP
+Implemented in \fBDice\fP\&.
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Ludo from the source code\&.

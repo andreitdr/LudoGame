@@ -1,0 +1,158 @@
+.TH "Player" 3 "Ludo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Player \- Represents a player in the game\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <Player\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPlayer\fP (PlayerColor playerColor)"
+.br
+.RI "Constructs a new \fBPlayer\fP object with a specified color\&. "
+.ti -1c
+.RI "\fBPlayer\fP ()"
+.br
+.RI "Constructs a new \fBPlayer\fP object\&. "
+.ti -1c
+.RI "\fB~Player\fP ()"
+.br
+.RI "Destroys the \fBPlayer\fP object\&. "
+.ti -1c
+.RI "void \fBSetColor\fP (PlayerColor playerColor)"
+.br
+.RI "Sets the color of the player\&. "
+.ti -1c
+.RI "PlayerColor \fBGetColor\fP () const"
+.br
+.RI "Gets the color of the player\&. "
+.ti -1c
+.RI "void \fBSetPawns\fP (std::vector< \fBPawn\fP * > pawns)"
+.br
+.RI "Sets the pawns of the player\&. "
+.ti -1c
+.RI "std::vector< \fBPawn\fP * > \fBGetPawns\fP () const"
+.br
+.RI "Gets the pawns of the player\&. "
+.ti -1c
+.RI "bool \fBHasAllPawnsInBase\fP ()"
+.br
+.RI "Checks if all pawns are in the base\&. "
+.ti -1c
+.RI "bool \fBHasAllPawnsInactive\fP ()"
+.br
+.RI "Checks if all pawns are inactive\&. "
+.ti -1c
+.RI "void \fBSetIsWinner\fP ()"
+.br
+.RI "Sets the player as the winner\&. "
+.ti -1c
+.RI "bool \fBIsWinner\fP ()"
+.br
+.RI "Checks if the player is the winner\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a player in the game\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Player::Player (PlayerColor playerColor)"
+
+.PP
+Constructs a new \fBPlayer\fP object with a specified color\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIplayerColor\fP The color of the player\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "PlayerColor Player::GetColor () const"
+
+.PP
+Gets the color of the player\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The color of the player\&. 
+.RE
+.PP
+
+.SS "std::vector< \fBPawn\fP * > Player::GetPawns () const"
+
+.PP
+Gets the pawns of the player\&. 
+.PP
+\fBReturns\fP
+.RS 4
+A vector of pointers to the pawns\&. 
+.RE
+.PP
+
+.SS "bool Player::HasAllPawnsInactive ()"
+
+.PP
+Checks if all pawns are inactive\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if all pawns are inactive, false otherwise\&. 
+.RE
+.PP
+
+.SS "bool Player::HasAllPawnsInBase ()"
+
+.PP
+Checks if all pawns are in the base\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if all pawns are in the base, false otherwise\&. 
+.RE
+.PP
+
+.SS "bool Player::IsWinner ()"
+
+.PP
+Checks if the player is the winner\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if the player is the winner, false otherwise\&. 
+.RE
+.PP
+
+.SS "void Player::SetColor (PlayerColor playerColor)"
+
+.PP
+Sets the color of the player\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIplayerColor\fP The color to set\&. 
+.RE
+.PP
+
+.SS "void Player::SetPawns (std::vector< \fBPawn\fP * > pawns)"
+
+.PP
+Sets the pawns of the player\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpawns\fP The pawns to set\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Ludo from the source code\&.

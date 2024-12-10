@@ -1,0 +1,73 @@
+.TH "Dice" 3 "Ludo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Dice \- Represents a dice used in the game\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <Dice\&.h>\fP
+.PP
+Inherits \fBIObserver\fP\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBDice\fP ()"
+.br
+.RI "Constructs a new \fBDice\fP object\&. "
+.ti -1c
+.RI "uint16_t \fBroll\fP ()"
+.br
+.RI "Rolls the dice and returns the result\&. "
+.ti -1c
+.RI "void \fBOnRoll\fP () override"
+.br
+.RI "Called when the dice is rolled\&. "
+.ti -1c
+.RI "void \fBOnMove\fP () override"
+.br
+.RI "Called when a move is made\&. "
+.in -1c
+
+Public Member Functions inherited from \fBIObserver\fP
+.in +1c
+.ti -1c
+.RI "virtual \fB~IObserver\fP ()=default"
+.br
+.RI "Destroys the \fBIObserver\fP object\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a dice used in the game\&. 
+.SH "Member Function Documentation"
+.PP 
+.SS "void Dice::OnMove ()\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when a move is made\&. 
+.PP
+Implements \fBIObserver\fP\&.
+.SS "void Dice::OnRoll ()\fR [override]\fP, \fR [virtual]\fP"
+
+.PP
+Called when the dice is rolled\&. 
+.PP
+Implements \fBIObserver\fP\&.
+.SS "uint16_t Dice::roll ()"
+
+.PP
+Rolls the dice and returns the result\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The value of the dice roll\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Ludo from the source code\&.

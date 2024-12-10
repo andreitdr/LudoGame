@@ -1,0 +1,115 @@
+.TH "LudoGrid" 3 "Ludo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+LudoGrid \- Represents the Ludo game grid in the UI\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <LudoGrid\&.h>\fP
+.PP
+Inherits QWidget\&.
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBLudoGrid\fP (QWidget *parent=nullptr)"
+.br
+.RI "Constructs a new \fBLudoGrid\fP object\&. "
+.ti -1c
+.RI "void \fBInitializeBoard\fP ()"
+.br
+.RI "Initializes the game board\&. "
+.ti -1c
+.RI "void \fBInitializePawnsColors\fP ()"
+.br
+.RI "Initializes the colors of the pawns\&. "
+.ti -1c
+.RI "void \fBInitializeObserver\fP ()"
+.br
+.RI "Initializes the observer for the game\&. "
+.ti -1c
+.RI "void \fBOnCellClicked\fP (int row, int col)"
+.br
+.RI "Handles the event when a cell is clicked\&. "
+.ti -1c
+.RI "void \fBDiceRoll\fP ()"
+.br
+.RI "Rolls the dice\&. "
+.ti -1c
+.RI "void \fBTransformToButtonPositions\fP (const std::vector< \fBPlayer\fP * > &players)"
+.br
+.RI "Transforms player positions to button positions\&. "
+.ti -1c
+.RI "void \fBUpdateButtonPositions\fP ()"
+.br
+.RI "Updates the positions of the buttons\&. "
+.ti -1c
+.RI "void \fBUpdatePawnButtonStates\fP ()"
+.br
+.RI "Updates the states of the pawn buttons\&. "
+.ti -1c
+.RI "void \fBStartGame\fP ()"
+.br
+.RI "Starts the game\&. "
+.ti -1c
+.RI "void \fBChangePlayer\fP ()"
+.br
+.RI "Changes the current player\&. "
+.ti -1c
+.RI "void \fBResetGame\fP ()"
+.br
+.RI "Resets the game\&. "
+.ti -1c
+.RI "void \fBFinalMessage\fP ()"
+.br
+.RI "Displays the final message\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents the Ludo game grid in the UI\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "LudoGrid::LudoGrid (QWidget * parent = \fRnullptr\fP)\fR [explicit]\fP"
+
+.PP
+Constructs a new \fBLudoGrid\fP object\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIparent\fP The parent widget\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "void LudoGrid::OnCellClicked (int row, int col)"
+
+.PP
+Handles the event when a cell is clicked\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIrow\fP The row of the clicked cell\&. 
+.br
+\fIcol\fP The column of the clicked cell\&. 
+.RE
+.PP
+
+.SS "void LudoGrid::TransformToButtonPositions (const std::vector< \fBPlayer\fP * > & players)"
+
+.PP
+Transforms player positions to button positions\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIplayers\fP The players in the game\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Ludo from the source code\&.

@@ -1,0 +1,239 @@
+.TH "Pawn" 3 "Ludo" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+Pawn \- Represents a pawn in the game\&.  
+
+.SH SYNOPSIS
+.br
+.PP
+.PP
+\fR#include <Pawn\&.h>\fP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBPawn\fP ()"
+.br
+.RI "Constructs a new \fBPawn\fP object\&. "
+.ti -1c
+.RI "\fBPawn\fP (std::map< int, std::pair< int, int > >::iterator pawnIterator, PlayerColor color, std::pair< int, int > initialPosition, std::pair< int, int > winPosition)"
+.br
+.RI "Constructs a new \fBPawn\fP object with specified parameters\&. "
+.ti -1c
+.RI "\fBPawn\fP (std::pair< int, int > pawnCoordinates, PlayerColor color, std::pair< int, int > initialPosition)"
+.br
+.RI "Constructs a new \fBPawn\fP object with specified coordinates\&. "
+.ti -1c
+.RI "\fB~Pawn\fP ()"
+.br
+.RI "Destroys the \fBPawn\fP object\&. "
+.ti -1c
+.RI "void \fBSetPawnIterator\fP (const std::map< int, std::pair< int, int > >::iterator &iterator)"
+.br
+.RI "Sets the iterator for the pawn\&. "
+.ti -1c
+.RI "void \fBSetPawnCoordinates\fP (const std::pair< int, int > &pawnCoordinates)"
+.br
+.RI "Sets the coordinates of the pawn\&. "
+.ti -1c
+.RI "void \fBSetIsBased\fP (const bool isBased)"
+.br
+.RI "Sets whether the pawn is based\&. "
+.ti -1c
+.RI "void \fBSetInitialPosition\fP (const std::pair< int, int > &pawnCoordinates)"
+.br
+.RI "Sets the initial position of the pawn\&. "
+.ti -1c
+.RI "void \fBSetFinalPosition\fP (const std::pair< int, int > &pawnCoordinates)"
+.br
+.RI "Sets the final position of the pawn\&. "
+.ti -1c
+.RI "std::map< int, std::pair< int, int > >::iterator & \fBGetPawnIterator\fP ()"
+.br
+.RI "Gets the iterator for the pawn\&. "
+.ti -1c
+.RI "std::pair< int, int > \fBGetInitialPosition\fP () const"
+.br
+.RI "Gets the initial position of the pawn\&. "
+.ti -1c
+.RI "std::pair< int, int > \fBGetWinPosition\fP () const"
+.br
+.RI "Gets the winning position of the pawn\&. "
+.ti -1c
+.RI "std::pair< int, int > \fBGetPawnCoordinates\fP () const"
+.br
+.RI "Gets the coordinates of the pawn\&. "
+.ti -1c
+.RI "PlayerColor \fBGetPawnColor\fP () const"
+.br
+.RI "Gets the color of the pawn\&. "
+.ti -1c
+.RI "bool \fBIsBased\fP () const"
+.br
+.RI "Checks if the pawn is based\&. "
+.in -1c
+.SH "Detailed Description"
+.PP 
+Represents a pawn in the game\&. 
+.SH "Constructor & Destructor Documentation"
+.PP 
+.SS "Pawn::Pawn (std::map< int, std::pair< int, int > >::iterator pawnIterator, PlayerColor color, std::pair< int, int > initialPosition, std::pair< int, int > winPosition)"
+
+.PP
+Constructs a new \fBPawn\fP object with specified parameters\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpawnIterator\fP Iterator to the pawn's position in a map\&. 
+.br
+\fIcolor\fP The color of the pawn\&. 
+.br
+\fIinitialPosition\fP The initial position of the pawn\&. 
+.br
+\fIwinPosition\fP The winning position of the pawn\&. 
+.RE
+.PP
+
+.SS "Pawn::Pawn (std::pair< int, int > pawnCoordinates, PlayerColor color, std::pair< int, int > initialPosition)"
+
+.PP
+Constructs a new \fBPawn\fP object with specified coordinates\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpawnCoordinates\fP The coordinates of the pawn\&. 
+.br
+\fIcolor\fP The color of the pawn\&. 
+.br
+\fIinitialPosition\fP The initial position of the pawn\&. 
+.RE
+.PP
+
+.SH "Member Function Documentation"
+.PP 
+.SS "std::pair< int, int > Pawn::GetInitialPosition () const"
+
+.PP
+Gets the initial position of the pawn\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The initial position of the pawn\&. 
+.RE
+.PP
+
+.SS "PlayerColor Pawn::GetPawnColor () const"
+
+.PP
+Gets the color of the pawn\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The color of the pawn\&. 
+.RE
+.PP
+
+.SS "std::pair< int, int > Pawn::GetPawnCoordinates () const"
+
+.PP
+Gets the coordinates of the pawn\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The coordinates of the pawn\&. 
+.RE
+.PP
+
+.SS "std::map< int, std::pair< int, int > >::iterator & Pawn::GetPawnIterator ()"
+
+.PP
+Gets the iterator for the pawn\&. 
+.PP
+\fBReturns\fP
+.RS 4
+Reference to the iterator\&. 
+.RE
+.PP
+
+.SS "std::pair< int, int > Pawn::GetWinPosition () const"
+
+.PP
+Gets the winning position of the pawn\&. 
+.PP
+\fBReturns\fP
+.RS 4
+The winning position of the pawn\&. 
+.RE
+.PP
+
+.SS "bool Pawn::IsBased () const"
+
+.PP
+Checks if the pawn is based\&. 
+.PP
+\fBReturns\fP
+.RS 4
+True if the pawn is based, false otherwise\&. 
+.RE
+.PP
+
+.SS "void Pawn::SetFinalPosition (const std::pair< int, int > & pawnCoordinates)"
+
+.PP
+Sets the final position of the pawn\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpawnCoordinates\fP The final position to set\&. 
+.RE
+.PP
+
+.SS "void Pawn::SetInitialPosition (const std::pair< int, int > & pawnCoordinates)"
+
+.PP
+Sets the initial position of the pawn\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpawnCoordinates\fP The initial position to set\&. 
+.RE
+.PP
+
+.SS "void Pawn::SetIsBased (const bool isBased)"
+
+.PP
+Sets whether the pawn is based\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIisBased\fP The based status to set\&. 
+.RE
+.PP
+
+.SS "void Pawn::SetPawnCoordinates (const std::pair< int, int > & pawnCoordinates)"
+
+.PP
+Sets the coordinates of the pawn\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIpawnCoordinates\fP The coordinates to set\&. 
+.RE
+.PP
+
+.SS "void Pawn::SetPawnIterator (const std::map< int, std::pair< int, int > >::iterator & iterator)"
+
+.PP
+Sets the iterator for the pawn\&. 
+.PP
+\fBParameters\fP
+.RS 4
+\fIiterator\fP The iterator to set\&. 
+.RE
+.PP
+
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for Ludo from the source code\&.
